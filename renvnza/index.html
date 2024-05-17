@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Renvnza | Home</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const canvas = document.getElementById("starfield");
+        const ctx = canvas.getContext("2d");
+        const numStars = 800;
+        const speed = 5;
+        let stars = [];
+      
+        function setCanvasSize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+      
+        class Star {
+          constructor(x, y, z, size) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.size = size;
+          }
+      
+          update() {
+            this.z -= speed;
+            if (this.z <= 0) {
+              this.reset();
+            }
+          }
+      
+          reset() {
+            this.z = canvas.width;
+            this.x = Math.random() * (canvas.width * 2) - canvas.width;
+            this.y = Math.random() * (canvas.height * 2) - canvas.height;
+            this.size = Math.random() * 2 + 1;
+          }
+      
+          draw() {
+            const x = ((this.x / this.z) * canvas.width) / 2 + canvas.width / 2;
+            const y = ((this.y / this.z) * canvas.height) / 2 + canvas.height / 2;
+            const radius = (1 - this.z / canvas.width) * this.size;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      
+        function initStars() {
+          stars = Array.from(
+            { length: numStars },
+            () =>
+              new Star(
+                Math.random() * (canvas.width * 2) - canvas.width,
+                Math.random() * (canvas.height * 2) - canvas.height,
+                Math.random() * canvas.width,
+                Math.random() * 2 + 1
+              )
+          );
+        }
+      
+        function updateStars() {
+          stars.forEach((star) => star.update());
+        }
+      
+        function drawStars() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "white";
+          stars.forEach((star) => star.draw());
+        }
+      
+        function animate() {
+          updateStars();
+          drawStars();
+          requestAnimationFrame(animate);
+        }
+      
+        window.addEventListener("resize", () => {
+          setCanvasSize();
+          initStars();
+        });
+      
+        setCanvasSize();
+        initStars();
+        animate();
+      });
+      </script>
+</head>
+<body>
+    <canvas id="starfield" style="background-image: url('resources/aud.jpg');
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -3px;width: 100%;"></canvas> <section id="parallax">
+            <section class="wrapper">
+                <div class="left">
+                    <h1>Pro show</h1>
+                    <p>The UCK took a major initiative to bring forth an event – SNIGDHA which involves the active presence of students from the orphanage.
+                        This event is conducted specially for these students, for their entertainment and wellbeing. It was launched by UCK in the year 2013 and was successfully initiated for continuous 7 seasons. Unfortunately due to the Covid pandemic this year the college was not able to conduct the event.</p>
+                    <a href="#" class="button">Buy tickets</a>
+                </div>
+                <div class="right">
+                    <img src="resources/s.png" alt="img" />
+                </div>
+            </section>
+    </section>
+    <section id="events">
+        <section class="wrapper">
+            <swiper-container class="eventbox">
+                <swiper-slide>
+                    <img src="resources/imageone.jpg" alt="image" />
+                    <div>
+                        <a href="#" class="bold">Event Number</a href="#">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="resources/imageone.jpg" alt="image" />
+                    <div>
+                        <a href="#" class="bold">Event Number</a href="#">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="resources/imageone.jpg" alt="image" />
+                    <div>
+                        <a href="#" class="bold">Event Number</a href="#">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="resources/imageone.jpg" alt="image" />
+                    <div>
+                        <a href="#" class="bold">Event Number</a href="#">
+                    </div>
+                </swiper-slide>
+
+                </swiper-container>
+                
+            </section>
+
+    </section>
+    <section id="updates">
+        <div class="wrapper">
+            <div class="container">
+          
+              <!-- card 1 -->
+              <input type="radio" name="slide" id="c1" checked>
+              <label for="c1" class="card">
+                <div class="row">
+                  <div class="icon">1</div>
+                  <div class="description">
+                    <h4>Winter</h4>
+                    <p>Winter has so much to offer -
+                      creative activities</p>
+                  </div>
+                </div>
+              </label>
+              
+              <!-- card 2 -->
+              <input type="radio" name="slide" id="c2">
+              <label for="c2" class="card">
+                <div class="row">
+                  <div class="icon">2</div>
+                  <div class="description">
+                    <h4>Digital Technology</h4>
+                    <p>Gets better every day -
+                      stay tuned</p>
+                  </div>
+                </div>
+              </label>
+          
+              <!-- card 3 -->
+              <input type="radio" name="slide" id="c3">
+              <label for="c3" class="card">
+                <div class="row">
+                  <div class="icon">3</div>
+                  <div class="description">
+                    <h4>Globalization</h4>
+                    <p>Help people all over the world</p>
+                  </div>
+                </div>
+              </label>
+          
+              <!-- card 4 
+              <input type="radio" name="slide" id="c4">
+              <label for="c4" class="card">
+                <div class="row">
+                  <div class="icon">4</div>
+                  <div class="description">
+                    <h4>New technologies</h4>
+                    <p>Space engineering becomes
+                      more and more advanced</p>
+                  </div>
+                </div>
+              </label>
+              <input type="radio" name="slide" id="c5">
+              <label for="c5" class="card">
+                <div class="row">
+                  <div class="icon">5</div>
+                  <div class="description">
+                    <h4>New technologies</h4>
+                    <p>Space engineering becomes
+                      more and more advanced</p>
+                  </div>
+                </div>
+              </label>
+              <input type="radio" name="slide" id="c6">
+              <label for="c6" class="card">
+                <div class="row">
+                  <div class="icon">5</div>
+                  <div class="description">
+                    <h4>New technologies</h4>
+                    <p>Space engineering becomes
+                      more and more advanced</p>
+                  </div>
+                </div>
+              </label>-->
+              
+            </div>
+          </div>
+    </section>
+    <div class="parallax"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+</html>
