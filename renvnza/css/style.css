@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 0;
 	padding: 0;
@@ -106,7 +108,45 @@ br.clear {
 body, html {
     height: 100%;
   }
+header{
+	margin-bottom: -2px;
+	background-image: url('../resources/aud.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+	padding: 20px 20px;
+    background-size: cover;
+  }
+  header img{
+	display: inline-block;
+	width: 80px;
+	height: 50px;
+  }
   
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+  
+  .sticky + .content {
+	padding-top: 102px;
+  }
+  #starfield {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90%;
+  }
+  
+  canvas {
+	display: block;
+  }
 #parallax {
     /* The image used */
     background-image: url('../resources/aud.jpg');
@@ -205,20 +245,6 @@ body, html {
 	margin: 20px 0 0 0;
 	display: inline-block;
 }
-#starfield {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
-  
-  canvas {
-	display: block;
-  }
   #updates{
 	background-image: url('../resources/aud.jpg');
 	background-attachment: fixed;
@@ -237,6 +263,7 @@ body, html {
   display: flex;
   flex-wrap: nowrap;
   justify-content: start;
+  margin-left: 200px;
 }
 
 #updates .card {
@@ -250,7 +277,7 @@ body, html {
   display: flex;
   align-items: flex-end;
   transition: .6s cubic-bezier(.28,-0.03,0,.99);
-  box-shadow: 0px 10px 30px -5px rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 10px 30px -5px rgb(0 0 0 / 81%);
 }
 
 #updates .card > .row {
@@ -306,23 +333,92 @@ body, html {
 }
 
 #updates .card[for="c1"] {
-  background-image: url('https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('../resources/event.jpg');
 }
 #updates .card[for="c2"] {
-  background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+	background-image: url('../resources/event.jpg');
 }
 #updates .card[for="c3"] {
-  background-image: url('https://plus.unsplash.com/premium_photo-1661421687248-7bb863c60723?q=80&w=2138&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+	background-image: url('../resources/event.jpg');
 }
 #updates .card[for="c4"] {
-  background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+	background-image: url('../resources/event.jpg');
 }
-#updates .card[for="c5"] {
-	background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  .hero {
+	width: 100%;
+	height: 80vh;
+	background: #f1f9ff;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
   }
-  #updates .card[for="c6"] {
-	background-image: url('https://plus.unsplash.com/premium_photo-1661421687248-7bb863c60723?q=80&w=2138&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  
+  .hero h1 {
+	font-size: 40px;
+	margin-bottom: 100px;
+	margin-top: -100px;
   }
+  
+  .hero .social-links {
+	display: flex;
+  }
+  
+  .hero .social-links a {
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+	margin: 0 30px;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.5s;
+  }
+  
+  .hero .social-links a .fab {
+	font-size: 30px;
+	line-height: 80px;
+	position: relative;
+	z-index: 10;
+	transition: color 0.5s;
+  }
+  
+  .hero .social-links a::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: -90px;
+	left: 0;
+	background: #000;
+	background: linear-gradient(-45deg, #ed1c94, #ffec17);
+	position: absolute;
+	transition: 0.5s;
+  }
+  
+  .hero .social-links a:hover::after {
+	top: 0;
+  }
+  
+  .hero .social-links a:hover .fab {
+	color: #fff;
+  }
+  
+  .hero .social-links a:hover {
+	transform: translateY(-10px);
+  }
+  footer{
+	background:#ffffff;
+	padding:20px 0;
+	text-align:center;
+    color: #000;
+}
+footer p a{ 
+	color:#000;
+}
+  
   /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
   @media only screen and (max-device-width: 1366px) {
     .parallax {

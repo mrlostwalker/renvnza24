@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="30x20" href="resources/logo.png">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Renvnza | Home</title>
     <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -89,8 +93,45 @@
         animate();
       });
       </script>
+      <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
+        
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+        
+              // Store hash
+              var hash = this.hash;
+        
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+        </script>
+        <script>
+        
+        </script>
 </head>
 <body>
+    <header class="sticky">
+      <div>
+         <img src="resources/logo.png" alt="logo" />
+      </div>
+      <div class="right">
+        <a href="#"></a>
+      </div>
+    </header>
     <canvas id="starfield" style="background-image: url('resources/aud.jpg');
 	background-attachment: fixed;
     background-position: center;
@@ -98,6 +139,7 @@
     background-size: cover;
     margin-bottom: -3px;width: 100%;"></canvas> <section id="parallax">
             <section class="wrapper">
+                <a href="#parallax" style="color: azure; font-size: 25px;">Lets Go</a>
                 <div class="left">
                     <h1>Pro show</h1>
                     <p>The UCK took a major initiative to bring forth an event – SNIGDHA which involves the active presence of students from the orphanage.
@@ -222,6 +264,24 @@
             </div>
           </div>
     </section>
+    <section id="contact">
+      <div class="hero">
+        <h1>Contact Us</h1>
+  
+        <div class="social-links">
+          <a href=""><i class="fab fa-facebook-f"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href=""><i class="fab fa-youtube"></i></a>
+          <a href=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </section>
+    <footer>
+				<section class="wrapper">
+					<p>© 2024 Renvnza. All right reserved. | Developed by <a href="http://ucek.in/" target="_blank" title="Alamsha">Ucek</a> </p>					
+				</section>
+		</footer>
     <div class="parallax"></div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
